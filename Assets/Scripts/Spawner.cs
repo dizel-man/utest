@@ -30,7 +30,8 @@ public class Spawner : MonoBehaviour
         {
             spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
             Vector3 adjustedPos = new Vector3(spawnPosition.x, Up, spawnPosition.z);
-            Instantiate(obj, adjustedPos, Quaternion.identity);
+          GameObject flow =  Instantiate(obj, adjustedPos, Quaternion.identity);
+            flow.transform.parent = transform;
         }
     }
 }
